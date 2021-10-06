@@ -9,28 +9,29 @@ import SwiftUI
 
 struct ProjectCard: View {
     var projectTitle: String
-    var done: Bool
+    var isDone: Bool
     
     var body: some View {
         VStack(spacing: 4) {
             // MARK: TODO change to project image
             RoundedRectangle(cornerRadius: 4)
+                .fill(Color(UIColor.systemGray3))
             
             VStack(alignment: .leading, spacing: 8) {
                 Text("Nome do aparelho em até 2 linhas")
                 HStack {
                     Circle()
-                        .fill(done ? .black : .white)
+                        .fill(isDone ? .black : .white)
                         .frame(width: 8, height: 8)
-                        .if(!done) {
+                        .if(!isDone) {
                             $0.wimsInnerShadow()
                         }
 
-                    if done {
+                    if isDone {
                         Text("Pronto")
                     } else {
                         Text("Aberto")
-                    }  
+                    }
                 }
             }
             .frame(maxWidth: .infinity, alignment: .leading)
@@ -45,7 +46,7 @@ struct ProjectCard: View {
 
 struct ProjectCard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectCard(projectTitle: "Nome do aparelho em até 2 linhas", done: true)
-        ProjectCard(projectTitle: "Nome do aparelho em até 2 linhas", done: false)
+        ProjectCard(projectTitle: "Nome do aparelho em até 2 linhas", isDone: true)
+        ProjectCard(projectTitle: "Nome do aparelho em até 2 linhas", isDone: false)
     }
 }
