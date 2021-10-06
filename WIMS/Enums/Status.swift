@@ -6,6 +6,6 @@
 //
 
 enum Status: String {
-    case done = "Fechado"
+    case done = "Pronto"
     case open = "Aberto"
 }
