@@ -13,6 +13,10 @@
 		AF5CE0C6270D026600BE9D27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5CE0C5270D026600BE9D27 /* Preview Assets.xcassets */; };
 		AF5CE0C8270D026600BE9D27 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0C7270D026600BE9D27 /* Persistence.swift */; };
 		AF5CE0CB270D026600BE9D27 /* WIMS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0C9270D026600BE9D27 /* WIMS.xcdatamodeld */; };
+		AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950851270E53F1007018B4 /* ProjectCard.swift */; };
+		AF950855270E56EF007018B4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950854270E56EF007018B4 /* Shadow.swift */; };
+		AF950858270E5748007018B4 /* View+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950857270E5748007018B4 /* View+Shadow.swift */; };
+		AF95085A270E5F14007018B4 /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950859270E5F14007018B4 /* View+If.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		AF5CE0C5270D026600BE9D27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF5CE0C7270D026600BE9D27 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		AF5CE0CA270D026600BE9D27 /* WIMS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WIMS.xcdatamodel; sourceTree = "<group>"; };
+		AF950851270E53F1007018B4 /* ProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCard.swift; sourceTree = "<group>"; };
+		AF950854270E56EF007018B4 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
+		AF950857270E5748007018B4 /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
+		AF950859270E5F14007018B4 /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,8 @@
 		AF5CE0BD270D026400BE9D27 /* WIMS */ = {
 			isa = PBXGroup;
 			children = (
+				AF950856270E5724007018B4 /* Extensions */,
+				AF950850270E53D9007018B4 /* Views */,
 				AF5CE0BE270D026400BE9D27 /* WIMSApp.swift */,
 				AF5CE0C0270D026400BE9D27 /* ContentView.swift */,
 				AF5CE0C2270D026600BE9D27 /* Assets.xcassets */,
@@ -71,6 +81,32 @@
 				AF5CE0C5270D026600BE9D27 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AF950850270E53D9007018B4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AF950851270E53F1007018B4 /* ProjectCard.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AF950853270E56AD007018B4 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				AF950854270E56EF007018B4 /* Shadow.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
+		AF950856270E5724007018B4 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AF950853270E56AD007018B4 /* Modifiers */,
+				AF950857270E5748007018B4 /* View+Shadow.swift */,
+				AF950859270E5F14007018B4 /* View+If.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,9 +180,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF5CE0C8270D026600BE9D27 /* Persistence.swift in Sources */,
+				AF950858270E5748007018B4 /* View+Shadow.swift in Sources */,
 				AF5CE0CB270D026600BE9D27 /* WIMS.xcdatamodeld in Sources */,
 				AF5CE0C1270D026400BE9D27 /* ContentView.swift in Sources */,
+				AF950855270E56EF007018B4 /* Shadow.swift in Sources */,
+				AF95085A270E5F14007018B4 /* View+If.swift in Sources */,
 				AF5CE0BF270D026400BE9D27 /* WIMSApp.swift in Sources */,
+				AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
