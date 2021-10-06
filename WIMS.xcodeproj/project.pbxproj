@@ -18,6 +18,8 @@
 		AF950858270E5748007018B4 /* View+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950857270E5748007018B4 /* View+Shadow.swift */; };
 		AF95085A270E5F14007018B4 /* View+If.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950859270E5F14007018B4 /* View+If.swift */; };
 		AF95085C270E621B007018B4 /* ProjectStepRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95085B270E621B007018B4 /* ProjectStepRow.swift */; };
+		AF95085E270E6714007018B4 /* StatusCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95085D270E6714007018B4 /* StatusCapsule.swift */; };
+		AF950861270E680E007018B4 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950860270E680E007018B4 /* Status.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +35,8 @@
 		AF950857270E5748007018B4 /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
 		AF950859270E5F14007018B4 /* View+If.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+If.swift"; sourceTree = "<group>"; };
 		AF95085B270E621B007018B4 /* ProjectStepRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStepRow.swift; sourceTree = "<group>"; };
+		AF95085D270E6714007018B4 /* StatusCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCapsule.swift; sourceTree = "<group>"; };
+		AF950860270E680E007018B4 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +69,7 @@
 		AF5CE0BD270D026400BE9D27 /* WIMS */ = {
 			isa = PBXGroup;
 			children = (
+				AF95085F270E67FE007018B4 /* Enums */,
 				AF950856270E5724007018B4 /* Extensions */,
 				AF950850270E53D9007018B4 /* Views */,
 				AF5CE0BE270D026400BE9D27 /* WIMSApp.swift */,
@@ -90,6 +95,7 @@
 			children = (
 				AF950851270E53F1007018B4 /* ProjectCard.swift */,
 				AF95085B270E621B007018B4 /* ProjectStepRow.swift */,
+				AF95085D270E6714007018B4 /* StatusCapsule.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +116,14 @@
 				AF950859270E5F14007018B4 /* View+If.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AF95085F270E67FE007018B4 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				AF950860270E680E007018B4 /* Status.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,8 +197,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF5CE0C8270D026600BE9D27 /* Persistence.swift in Sources */,
+				AF95085E270E6714007018B4 /* StatusCapsule.swift in Sources */,
 				AF95085C270E621B007018B4 /* ProjectStepRow.swift in Sources */,
 				AF950858270E5748007018B4 /* View+Shadow.swift in Sources */,
+				AF950861270E680E007018B4 /* Status.swift in Sources */,
 				AF5CE0CB270D026600BE9D27 /* WIMS.xcdatamodeld in Sources */,
 				AF5CE0C1270D026400BE9D27 /* ContentView.swift in Sources */,
 				AF950855270E56EF007018B4 /* Shadow.swift in Sources */,
