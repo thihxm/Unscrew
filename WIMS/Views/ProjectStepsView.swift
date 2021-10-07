@@ -14,7 +14,7 @@ struct ProjectStepsView: View {
     var body: some View {
         VStack(spacing: 32) {
             Text("Nome do projeto")
-                .font(.title.bold())
+                .font(.largeTitle.bold())
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal, 16)
             
