@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct StatusSelector: View {
-    @State var selectedStatuses: Set<Status> = []
+    @Binding var selectedStatuses: Set<Status>
     
     func selectStatus(_ status: Status) {
         let isStatusSelected = selectedStatuses.contains { $0 == status }
@@ -38,6 +38,6 @@ struct StatusSelector: View {
 
 struct StatusSelector_Previews: PreviewProvider {
     static var previews: some View {
-        StatusSelector()
+        StatusSelector(selectedStatuses: .constant([]))
     }
 }

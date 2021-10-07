@@ -36,7 +36,7 @@ struct ProjectCard: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .frame(maxWidth: 160, maxHeight: 172)
+        .frame(maxWidth: 160, idealHeight: 172, maxHeight: 172)
         .padding(8)
         .background(Color(UIColor.systemBackground))
         .cornerRadius(8)
