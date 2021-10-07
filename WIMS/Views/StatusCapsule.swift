@@ -10,15 +10,20 @@ import SwiftUI
 struct StatusCapsule: View {
     var status: Status
     var isSelected: Bool
+    var action: () -> Void = {}
     
     var body: some View {
-        Text(status.rawValue)
-            .padding(.horizontal, 40)
-            .padding(.vertical, 8)
-            .foregroundColor(isSelected ? .white : .black)
-            .background(isSelected ? Color.black : Color.white)
-            .clipShape(Capsule())
-            .wimsShadow()
+        Button(action: action) {
+            Text(status.rawValue)
+                .padding(.horizontal, 40)
+                .padding(.vertical, 8)
+                .foregroundColor(isSelected ? .white : .black)
+                .background(isSelected ? Color.black : Color.white)
+                .clipShape(Capsule())
+                .wimsShadow()
+        }
+        .buttonStyle(PlainButtonStyle())
+        .animation(.easeInOut(duration: 0.2))
     }
 }
 
