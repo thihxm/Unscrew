@@ -21,6 +21,7 @@
 		AF95085E270E6714007018B4 /* StatusCapsule.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF95085D270E6714007018B4 /* StatusCapsule.swift */; };
 		AF950861270E680E007018B4 /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950860270E680E007018B4 /* Status.swift */; };
 		AF950863270E7180007018B4 /* StatusSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950862270E7180007018B4 /* StatusSelector.swift */; };
+		AF950865270E7AEF007018B4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950864270E7AEF007018B4 /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		AF95085D270E6714007018B4 /* StatusCapsule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusCapsule.swift; sourceTree = "<group>"; };
 		AF950860270E680E007018B4 /* Status.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		AF950862270E7180007018B4 /* StatusSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelector.swift; sourceTree = "<group>"; };
+		AF950864270E7AEF007018B4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				AF95085B270E621B007018B4 /* ProjectStepRow.swift */,
 				AF95085D270E6714007018B4 /* StatusCapsule.swift */,
 				AF950862270E7180007018B4 /* StatusSelector.swift */,
+				AF950864270E7AEF007018B4 /* SearchBar.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AF950865270E7AEF007018B4 /* SearchBar.swift in Sources */,
 				AF950863270E7180007018B4 /* StatusSelector.swift in Sources */,
 				AF5CE0C8270D026600BE9D27 /* Persistence.swift in Sources */,
 				AF95085E270E6714007018B4 /* StatusCapsule.swift in Sources */,
