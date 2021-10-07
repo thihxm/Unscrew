@@ -15,9 +15,19 @@ struct HomeProjectsView: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 32) {
-            Text("WIMS")
-                .font(.largeTitle.bold())
-                .padding(.horizontal, 16)
+            HStack {
+                Text("WIMS")
+                    .font(.largeTitle.bold())
+                
+                Spacer()
+                
+                Button(action: {}) {
+                    Image(systemName: "plus.circle.fill")
+                        .font(.title)
+                        .foregroundColor(.black)
+                }
+            }
+            .padding(.horizontal, 16)
             
             VStack(alignment: .center, spacing: 24) {
                 SearchBar(text: $searchText)
