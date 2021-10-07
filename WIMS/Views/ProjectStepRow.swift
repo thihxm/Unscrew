@@ -26,6 +26,7 @@ struct ProjectStepRow: View {
                 
                 Text(stepTitle)
                     .font(.title3)
+                    .padding(.trailing, 8)
             }
             .background(Color(UIColor.systemBackground))
             .cornerRadius(8)

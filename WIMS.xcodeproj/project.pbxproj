@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		AF464E0C270F66AC006B8645 /* HomeProjectsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF464E0B270F66AC006B8645 /* HomeProjectsView.swift */; };
+		AF464E0E270F78AC006B8645 /* ProjectStepsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF464E0D270F78AC006B8645 /* ProjectStepsView.swift */; };
+		AF464E10270F7B84006B8645 /* Color+AppColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF464E0F270F7B84006B8645 /* Color+AppColors.swift */; };
 		AF5CE0BF270D026400BE9D27 /* WIMSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0BE270D026400BE9D27 /* WIMSApp.swift */; };
 		AF5CE0C1270D026400BE9D27 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0C0270D026400BE9D27 /* ContentView.swift */; };
 		AF5CE0C3270D026600BE9D27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5CE0C2270D026600BE9D27 /* Assets.xcassets */; };
@@ -28,6 +30,8 @@
 
 /* Begin PBXFileReference section */
 		AF464E0B270F66AC006B8645 /* HomeProjectsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProjectsView.swift; sourceTree = "<group>"; };
+		AF464E0D270F78AC006B8645 /* ProjectStepsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectStepsView.swift; sourceTree = "<group>"; };
+		AF464E0F270F7B84006B8645 /* Color+AppColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+AppColors.swift"; sourceTree = "<group>"; };
 		AF5CE0BB270D026400BE9D27 /* WIMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF5CE0BE270D026400BE9D27 /* WIMSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIMSApp.swift; sourceTree = "<group>"; };
 		AF5CE0C0270D026400BE9D27 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -108,6 +112,7 @@
 				AF950864270E7AEF007018B4 /* SearchBar.swift */,
 				AF950866270E8E37007018B4 /* TabBar.swift */,
 				AF464E0B270F66AC006B8645 /* HomeProjectsView.swift */,
+				AF464E0D270F78AC006B8645 /* ProjectStepsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -126,6 +131,7 @@
 				AF950853270E56AD007018B4 /* Modifiers */,
 				AF950857270E5748007018B4 /* View+Shadow.swift */,
 				AF950859270E5F14007018B4 /* View+If.swift */,
+				AF464E0F270F7B84006B8645 /* Color+AppColors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -210,6 +216,7 @@
 			files = (
 				AF950865270E7AEF007018B4 /* SearchBar.swift in Sources */,
 				AF950863270E7180007018B4 /* StatusSelector.swift in Sources */,
+				AF464E0E270F78AC006B8645 /* ProjectStepsView.swift in Sources */,
 				AF464E0C270F66AC006B8645 /* HomeProjectsView.swift in Sources */,
 				AF5CE0C8270D026600BE9D27 /* Persistence.swift in Sources */,
 				AF95085E270E6714007018B4 /* StatusCapsule.swift in Sources */,
@@ -223,6 +230,7 @@
 				AF5CE0BF270D026400BE9D27 /* WIMSApp.swift in Sources */,
 				AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */,
 				AF950867270E8E37007018B4 /* TabBar.swift in Sources */,
+				AF464E10270F7B84006B8645 /* Color+AppColors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
