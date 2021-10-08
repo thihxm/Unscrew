@@ -30,6 +30,7 @@
 		AF950863270E7180007018B4 /* StatusSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950862270E7180007018B4 /* StatusSelector.swift */; };
 		AF950865270E7AEF007018B4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950864270E7AEF007018B4 /* SearchBar.swift */; };
 		AF950867270E8E37007018B4 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950866270E8E37007018B4 /* TabBar.swift */; };
+		AFAA5F002710846800F3C005 /* ProjectNameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		AF950862270E7180007018B4 /* StatusSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSelector.swift; sourceTree = "<group>"; };
 		AF950864270E7AEF007018B4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AF950866270E8E37007018B4 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectNameAlert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				AF464E0D270F78AC006B8645 /* ProjectStepsView.swift */,
 				AF54235B270F845A000E6C35 /* StepSheetView.swift */,
 				AF54235D270F864D000E6C35 /* RoundedCorners.swift */,
+				AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */,
 				AF54235E270F864D000E6C35 /* RoundedCorners.swift in Sources */,
 				AF950867270E8E37007018B4 /* TabBar.swift in Sources */,
+				AFAA5F002710846800F3C005 /* ProjectNameAlert.swift in Sources */,
 				AF464E10270F7B84006B8645 /* Color+AppColors.swift in Sources */,
 				AF542361270F8C06000E6C35 /* Step+helpers.swift in Sources */,
 			);

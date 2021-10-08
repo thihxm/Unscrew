@@ -10,11 +10,18 @@ import SwiftUI
 @main
 struct WIMSApp: App {
     let persistenceController = PersistenceController.shared
+    
+    @Environment(\.scenePhase) var scenePhase
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
+            HomeProjectsView()
+                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        }
+        .onChange(of: scenePhase) { phase in
+            if phase == .background {
+                persistenceController.save()
+            }
         }
     }
 }

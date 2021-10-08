@@ -10,7 +10,14 @@ import CoreData
 
 struct ProjectStepsView: View {
     let project: Project
-    @State var selectedStep: Step? = nil
+    var projectsSteps: [Step] {
+        if let steps = project.steps as? Set<Step> {
+            return Array(steps)
+        }
+        return [Step]()
+    }
+    
+    @State var selectedStep: Step = Step.example(context: PersistenceController.preview.container.viewContext)
     @State var presentDetails: Bool = false
     
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
@@ -34,20 +41,20 @@ struct ProjectStepsView: View {
             
             ScrollView(.vertical) {
                 VStack {
-                    ForEach(Array(project.steps! as Set), id: \.self) { step in
+                    ForEach(projectsSteps, id: \.self) { step in
                         Button(action: {
-                            selectedStep = (step as! Step)
+                            self.selectedStep = step
                             presentDetails.toggle()
                         }) {
-                            ProjectStepRow(step: step as! Step)
+                            ProjectStepRow(step: step)
+                        }
+                        .sheet(isPresented: $presentDetails) {
+                            StepSheetView(step: selectedStep)
                         }
                     }
                 }
                 .padding(.horizontal, 24)
             }
-        }
-        .sheet(isPresented: $presentDetails) {
-            StepSheetView(step: selectedStep!)
         }
         .padding(.top, 32)
         .background(Color.background.edgesIgnoringSafeArea(.all))
