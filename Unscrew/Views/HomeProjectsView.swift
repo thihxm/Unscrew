@@ -10,8 +10,8 @@ import SwiftUI
 struct HomeProjectsView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    @FetchRequest(fetchRequest: Project.fetch(), animation: .default)
-    private var projects: FetchedResults<Project>
+//    @FetchRequest(fetchRequest: Project.fetch(), animation: .default)
+//    private var projects: FetchedResults<Project>
     
     @State private var selectedStatuses: Set<Status> = []
     @State private var searchText: String = ""
@@ -40,27 +40,12 @@ struct HomeProjectsView: View {
                     .padding(.horizontal, 16)
                     
                     VStack(alignment: .center, spacing: 24) {
-                        SearchBar(text: $searchText)
+                        SearchBar(text: $searchText, search: search)
                         StatusSelector(selectedStatuses: $selectedStatuses)
                     }
                     .padding(.horizontal, 24)
                     
-                    ScrollView(.vertical) {
-                        LazyVGrid(columns: columns, spacing: 16) {
-                            ForEach(projects) { project in
-                                NavigationLink(
-                                    destination: ProjectStepsView(project: project),
-                                    tag: project.name,
-                                    selection: $showProject
-                                ) {
-                                    ProjectCard(project: project)
-                                }
-                                .buttonStyle(PlainButtonStyle())
-                            }
-                        }
-                        .padding(.top, 8)
-                        .padding(.horizontal, 24)
-                    }
+                    ProjectList(filter: searchText, selectedStatuses: selectedStatuses, showProject: $showProject)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .navigationTitle("Unscrew")
@@ -86,6 +71,10 @@ struct HomeProjectsView: View {
             PersistenceController.shared.save()
             self.showProject = project.name
         }
+    }
+    
+    private func search() {
+        
     }
 }
 

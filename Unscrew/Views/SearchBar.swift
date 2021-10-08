@@ -18,7 +18,7 @@ struct SearchBar: View {
     var body: some View {
         HStack {
             if #available(iOS 15.0, *) {
-                TextField("Placeholder", text: $text)
+                TextField("Buscar projeto", text: $text)
                     .frame(height: 32)
                     .submitLabel(.search)
                     .onSubmit {
@@ -26,7 +26,7 @@ struct SearchBar: View {
                     }
                     .focused($isTyping)
             } else {
-                TextField("Placeholder", text: $text, onCommit: search)
+                TextField("Buscar projeto", text: $text, onCommit: search)
                     .frame(height: 32)
             }
             
