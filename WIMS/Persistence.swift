@@ -17,7 +17,7 @@ struct PersistenceController {
         
         let project = Project(name: "Impressora Top", context: viewContext)
         for i in 0..<10 {
-            let newStep = Step(name: "Passo \(i)", image: UIImage(named: "Example 2")!.jpegData(compressionQuality: 1), notes: "Super obsevações que devem ser lembradas na hora de aplicar este passo", context: viewContext)
+            let newStep = Step(name: "Passo \(i)", image: UIImage(named: "Example 2"), notes: "Super obsevações que devem ser lembradas na hora de aplicar este passo", context: viewContext)
             project.addToSteps(newStep)
         }
         for _ in 0..<10 {

@@ -27,10 +27,17 @@ struct ProjectStepRow: View {
                     .wimsShadow()
                 
                 HStack(spacing: 8) {
-                    // MARK: TODO change to step image
-                    RoundedRectangle(cornerRadius: 8)
-                        .fill(Color(UIColor.systemGray3))
-                        .frame(width: 80, height: 80)
+                    if let image = step.uiImage {
+                        Image(uiImage: image)
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 80, height: 80)
+                            .cornerRadius(8)
+                    } else {
+                        RoundedRectangle(cornerRadius: 8)
+                            .fill(Color(UIColor.systemGray3))
+                            .frame(width: 80, height: 80)
+                    }
                     
                     Text(step.name)
                         .font(.title3)

@@ -36,7 +36,7 @@ class StepViewModel: ObservableObject {
             updateStep?.notes = notes
             updateStep?.uiImage = image!
         } else {
-            _ = Step(name: name, image: image?.jpegData(compressionQuality: 1), notes: notes, context: context)
+            _ = Step(name: name, image: image, notes: notes, context: context)
         }
         
         do {

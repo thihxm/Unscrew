@@ -21,10 +21,17 @@ struct StepSheetView: View {
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
-                // MARK: TODO use step image
-                Rectangle()
-                    .fill(Color(UIColor.systemGray3))
-                .frame(maxHeight: 231)
+                if let image = step.uiImage {
+                    Image(uiImage: image)
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxHeight: 231)
+                } else {
+                    Rectangle()
+                        .fill(Color(UIColor.systemGray3))
+                        .frame(maxHeight: 231)
+                }
+                
                 
                 HStack {
                     Button(action: {}) {

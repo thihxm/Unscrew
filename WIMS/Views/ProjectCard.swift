@@ -13,10 +13,17 @@ struct ProjectCard: View {
     
     var body: some View {
         VStack(spacing: 4) {
-            // MARK: TODO change to project image
-            RoundedRectangle(cornerRadius: 4)
-                .fill(Color(UIColor.systemGray3))
-                .frame(height: 96)
+            if let image = project.firstStepImage() {
+                Image(uiImage: image)
+                    .resizable()
+                    .scaledToFill()
+                    .frame(height: 96)
+                    .cornerRadius(4)
+            } else {
+                RoundedRectangle(cornerRadius: 4)
+                    .fill(Color(UIColor.systemGray3))
+                    .frame(height: 96)
+            }
             
             VStack(alignment: .leading) {
                 Text(project.name)

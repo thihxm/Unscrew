@@ -10,11 +10,11 @@ import CoreData
 import UIKit
 
 extension Step {
-    convenience init(name: String, image: Data?, notes: String, context: NSManagedObjectContext) {
+    convenience init(name: String, image: UIImage?, notes: String, context: NSManagedObjectContext) {
         self.init(context: context)
         self.name_ = name
         self.isDone = false
-        self.image_ = image
+        self.image_ = image?.jpegData(compressionQuality: 1) ?? nil
         self.notes_ = notes
     }
     
@@ -27,12 +27,15 @@ extension Step {
         }
     }
     
-    var uiImage: UIImage {
+    var uiImage: UIImage? {
         get {
-            return UIImage(data: image_!)!
+            guard let image = image_ else {
+                return nil
+            }
+            return UIImage(data: image)
         }
         set {
-            image_ = newValue.jpegData(compressionQuality: 1.0)
+            image_ = newValue!.jpegData(compressionQuality: 1.0)
         }
     }
     
@@ -65,7 +68,7 @@ extension Step {
     }
     
     static func example(context: NSManagedObjectContext) -> Step {
-        return Step(name: "Primero passo", image: UIImage(systemName: "photo.fill")!.jpegData(compressionQuality: 1), notes: "Super obsevações que devem ser lembradas na hora de aplicar este passo", context: context)
+        return Step(name: "Primero passo", image: UIImage(systemName: "photo.fill"), notes: "Super obsevações que devem ser lembradas na hora de aplicar este passo", context: context)
     }
 }
 

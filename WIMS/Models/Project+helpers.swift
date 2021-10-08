@@ -7,6 +7,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 extension Project {
     convenience init(name: String, context: NSManagedObjectContext) {
@@ -27,6 +28,11 @@ extension Project {
     public override func awakeFromInsert() {
         setPrimitiveValue("", forKey: ProjectProperties.name)
         setPrimitiveValue(false, forKey: ProjectProperties.isDone)
+    }
+    
+    func firstStepImage() -> UIImage? {
+        let steps = Array(self.steps as! Set<Step>)
+        return steps.first?.uiImage
     }
     
     static func delete(at offset: IndexPath, for projects: [Project]) {

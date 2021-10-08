@@ -32,6 +32,7 @@
 		AF950867270E8E37007018B4 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950866270E8E37007018B4 /* TabBar.swift */; };
 		AFAA5F002710846800F3C005 /* ProjectNameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */; };
 		AFAA5F022710AC6700F3C005 /* StepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA5F012710AC6700F3C005 /* StepViewModel.swift */; };
+		AFAA5F052710C4A800F3C005 /* CameraView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA5F042710C4A800F3C005 /* CameraView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +62,7 @@
 		AF950866270E8E37007018B4 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectNameAlert.swift; sourceTree = "<group>"; };
 		AFAA5F012710AC6700F3C005 /* StepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewModel.swift; sourceTree = "<group>"; };
+		AFAA5F042710C4A800F3C005 /* CameraView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				AF54235B270F845A000E6C35 /* StepSheetView.swift */,
 				AF54235D270F864D000E6C35 /* RoundedCorners.swift */,
 				AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */,
+				AFAA5F042710C4A800F3C005 /* CameraView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				AF54235C270F845A000E6C35 /* StepSheetView.swift in Sources */,
 				AF5CE0C1270D026400BE9D27 /* ContentView.swift in Sources */,
 				AF950855270E56EF007018B4 /* Shadow.swift in Sources */,
+				AFAA5F052710C4A800F3C005 /* CameraView.swift in Sources */,
 				AF95085A270E5F14007018B4 /* View+If.swift in Sources */,
 				AF5CE0BF270D026400BE9D27 /* WIMSApp.swift in Sources */,
 				AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */,
