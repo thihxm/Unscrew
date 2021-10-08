@@ -48,10 +48,20 @@ extension Step {
         }
     }
     
+    var timestamp: Date {
+        get {
+            return timestamp_ ?? Date()
+        }
+        set {
+            timestamp_ = newValue
+        }
+    }
+    
     public override func awakeFromInsert() {
         setPrimitiveValue("", forKey: StepProperties.name)
         setPrimitiveValue(false, forKey: StepProperties.isDone)
         setPrimitiveValue("", forKey: StepProperties.notes)
+        setPrimitiveValue(Date(), forKey: StepProperties.timestamp)
     }
     
     static func delete(at offset: IndexPath, for steps: [Step]) {
@@ -62,7 +72,7 @@ extension Step {
     
     static func fetch() -> NSFetchRequest<Step> {
         let request = NSFetchRequest<Step>(entityName: "Step")
-        request.sortDescriptors = [NSSortDescriptor(keyPath: \Step.name_, ascending: true)]
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Step.timestamp_, ascending: true)]
         request.predicate = NSPredicate(format: "TRUEPREDICATE")
         return request
     }
@@ -77,4 +87,5 @@ struct StepProperties {
     static let isDone = "isDone"
     static let image = "image_"
     static let notes = "notes_"
+    static let timestamp = "timestamp_"
 }

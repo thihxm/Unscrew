@@ -11,14 +11,15 @@ import CoreData
 struct ProjectStepRow: View {
     @ObservedObject var stepData: StepViewModel
     
+    let project: Project
     let step: Step
     
     @State private var presentDetails: Bool = false
     
     var body: some View {
         Button(action: {
+            stepData.editStep(project: project, step: step)
             presentDetails.toggle()
-            stepData.editStep(step: step)
         }) {
             HStack(spacing: 16) {
                 Circle()
@@ -46,18 +47,23 @@ struct ProjectStepRow: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .background(Color(UIColor.systemBackground))
                 .cornerRadius(8)
+                .wimsShadow()
             }
             .frame(maxHeight: 80)
         }
         .sheet(isPresented: $presentDetails) {
-            StepSheetView(step: step, stepData: stepData)
+            StepSheetView(stepData: stepData)
         }
     }
 }
 
 struct ProjectStepRow_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectStepRow(stepData: StepViewModel(), step: Step.example(context: PersistenceController.preview.container.viewContext))
+        ProjectStepRow(
+            stepData: StepViewModel(),
+            project: Project.example(context: PersistenceController.preview.container.viewContext),
+            step: Step.example(context: PersistenceController.preview.container.viewContext)
+        )
     }
 }
 

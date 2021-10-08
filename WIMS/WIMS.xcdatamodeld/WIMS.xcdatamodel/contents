@@ -13,11 +13,12 @@
         <attribute name="isDone" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="name_" optional="YES" attributeType="String"/>
         <attribute name="notes_" optional="YES" attributeType="String"/>
+        <attribute name="timestamp_" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <relationship name="project" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Project" inverseName="steps" inverseEntity="Project"/>
     </entity>
     <elements>
         <element name="Item" positionX="-557.0349731445312" positionY="-382.3550415039062" width="128" height="44"/>
-        <element name="Step" positionX="-706.9862670898438" positionY="-134.5176391601562" width="128" height="118"/>
         <element name="Project" positionX="-437.0394287109375" positionY="-104.5461730957031" width="128" height="88"/>
+        <element name="Step" positionX="-706.9862670898438" positionY="-134.5176391601562" width="128" height="119"/>
     </elements>
 </model>

@@ -11,6 +11,7 @@ import UIKit
 import Combine
 
 class StepViewModel: ObservableObject {
+    @Published var updateProject: Project!
     @Published var updateStep: Step!
     
     @Published var isDone: Bool = false
@@ -36,7 +37,8 @@ class StepViewModel: ObservableObject {
             updateStep?.notes = notes
             updateStep?.uiImage = image!
         } else {
-            _ = Step(name: name, image: image, notes: notes, context: context)
+            let step = Step(name: name, image: image, notes: notes, context: context)
+            updateProject.addToSteps(step)
         }
         
         do {
@@ -51,8 +53,12 @@ class StepViewModel: ObservableObject {
         updateStep = nil
     }
     
-    func editStep(step: Step) {
+    func editStep(project: Project, step: Step) {
+        updateProject = project
         updateStep = step
     }
     
+    func addStep(project: Project) {
+        updateProject = project
+    }
 }

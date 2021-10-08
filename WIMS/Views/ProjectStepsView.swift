@@ -11,6 +11,8 @@ import CoreData
 struct ProjectStepsView: View {
     @StateObject var stepData = StepViewModel()
     
+    @State var showCreateStepSheet: Bool = false
+    
     let project: Project
     var projectsSteps: [Step] {
         if let steps = project.steps as? Set<Step> {
@@ -24,13 +26,13 @@ struct ProjectStepsView: View {
     var body: some View {
         VStack(spacing: 16) {
             HStack {
-                Button(action: {}) {
+                Button(action: sortSteps) {
                     Image(systemName: "arrow.up.arrow.down")
                 }
                 
                 Spacer()
                 
-                Button(action: {}) {
+                Button(action: createStep) {
                     Image(systemName: "plus")
                 }
             }
@@ -41,7 +43,7 @@ struct ProjectStepsView: View {
             ScrollView(.vertical) {
                 VStack {
                     ForEach(projectsSteps, id: \.self) { step in
-                        ProjectStepRow(stepData: stepData, step: step)
+                        ProjectStepRow(stepData: stepData, project: project, step: step)
                     }
                 }
                 .padding(.horizontal, 24)
@@ -50,6 +52,18 @@ struct ProjectStepsView: View {
         .padding(.top, 32)
         .background(Color.background.edgesIgnoringSafeArea(.all))
         .navigationTitle(project.name)
+        .sheet(isPresented: $showCreateStepSheet) {
+            StepSheetView(stepData: stepData)
+        }
+    }
+    
+    func sortSteps() {
+        
+    }
+    
+    func createStep() {
+        stepData.addStep(project: project)
+        showCreateStepSheet.toggle()
     }
 }
 

@@ -7,21 +7,32 @@
 
 import SwiftUI
 
+class ImageSaver: NSObject {
+    func writeToPhotoAlbum(image: UIImage) {
+        UIImageWriteToSavedPhotosAlbum(image, self, #selector(saveError), nil)
+    }
+    
+    @objc func saveError(_ image: UIImage, didFinishSavingwithError error: Error?, contextInfo: UnsafeRawPointer) {
+        print("Save finished")
+    }
+}
+
 struct StepSheetView: View {
     @Environment(\.managedObjectContext) private var viewContext
     
-    let step: Step
     @ObservedObject var stepData: StepViewModel
     
-    init(step: Step, stepData: StepViewModel) {
-        self.step = step
+    @State private var image: Image?
+    @State private var showingImagePicker = false
+    
+    init(stepData: StepViewModel) {
         self.stepData = stepData
     }
     
     var body: some View {
         VStack(spacing: 0) {
             ZStack {
-                if let image = step.uiImage {
+                if let image = stepData.image {
                     Image(uiImage: image)
                         .resizable()
                         .scaledToFill()
@@ -30,8 +41,10 @@ struct StepSheetView: View {
                     Rectangle()
                         .fill(Color(UIColor.systemGray3))
                         .frame(maxHeight: 231)
+                        .onTapGesture {
+                            self.showingImagePicker = true
+                        }
                 }
-                
                 
                 HStack {
                     Button(action: {}) {
@@ -75,11 +88,22 @@ struct StepSheetView: View {
             self.stepData.writeData(context: viewContext)
             self.stepData.reset()
         }
+        .fullScreenCover(isPresented: $showingImagePicker, onDismiss: loadImage) {
+            ImagePicker(image: $stepData.image)
+        }
+    }
+    
+    func loadImage() {
+        guard let inputImage = stepData.image else { return }
+        image = Image(uiImage: inputImage)
+        
+        let imageSaver = ImageSaver()
+        imageSaver.writeToPhotoAlbum(image: inputImage)
     }
 }
 
 struct StepSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        StepSheetView(step: Step.example(context: PersistenceController.preview.container.viewContext), stepData: StepViewModel())
+        StepSheetView(stepData: StepViewModel())
     }
 }
