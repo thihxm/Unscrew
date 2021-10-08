@@ -68,7 +68,6 @@ struct ProjectStepsView: View {
     }
     
     func sortSteps() {
-        print("sorting")
         withAnimation {
             switch sortDirection {
             case .asc:
