@@ -31,6 +31,7 @@
 		AF950865270E7AEF007018B4 /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950864270E7AEF007018B4 /* SearchBar.swift */; };
 		AF950867270E8E37007018B4 /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950866270E8E37007018B4 /* TabBar.swift */; };
 		AFAA5F002710846800F3C005 /* ProjectNameAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */; };
+		AFAA5F022710AC6700F3C005 /* StepViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAA5F012710AC6700F3C005 /* StepViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		AF950864270E7AEF007018B4 /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 		AF950866270E8E37007018B4 /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
 		AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectNameAlert.swift; sourceTree = "<group>"; };
+		AFAA5F012710AC6700F3C005 /* StepViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +102,7 @@
 		AF5CE0BD270D026400BE9D27 /* WIMS */ = {
 			isa = PBXGroup;
 			children = (
+				AFAA5F032710AC6A00F3C005 /* ViewModels */,
 				AF54235F270F8BF6000E6C35 /* Models */,
 				AF95085F270E67FE007018B4 /* Enums */,
 				AF950856270E5724007018B4 /* Extensions */,
@@ -165,6 +168,14 @@
 				AF950860270E680E007018B4 /* Status.swift */,
 			);
 			path = Enums;
+			sourceTree = "<group>";
+		};
+		AFAA5F032710AC6A00F3C005 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				AFAA5F012710AC6700F3C005 /* StepViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 				AF5CE0C8270D026600BE9D27 /* Persistence.swift in Sources */,
 				AF95085E270E6714007018B4 /* StatusCapsule.swift in Sources */,
 				AF95085C270E621B007018B4 /* ProjectStepRow.swift in Sources */,
+				AFAA5F022710AC6700F3C005 /* StepViewModel.swift in Sources */,
 				AF950858270E5748007018B4 /* View+Shadow.swift in Sources */,
 				AF950861270E680E007018B4 /* Status.swift in Sources */,
 				AF5CE0CB270D026600BE9D27 /* WIMS.xcdatamodeld in Sources */,

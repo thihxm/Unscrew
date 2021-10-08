@@ -17,6 +17,7 @@ struct WIMSApp: App {
         WindowGroup {
             HomeProjectsView()
                 .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+                .preferredColorScheme(.light)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .background {

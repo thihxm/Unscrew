@@ -8,17 +8,14 @@
 import SwiftUI
 
 struct StepSheetView: View {
+    @Environment(\.managedObjectContext) private var viewContext
+    
     let step: Step
+    @ObservedObject var stepData: StepViewModel
     
-    @State var stepName: String
-    @State var isDone: Bool = false
-    @State var notes: String
-    
-    init(step: Step) {
+    init(step: Step, stepData: StepViewModel) {
         self.step = step
-        self.stepName = step.name
-        self.isDone = step.isDone
-        self.notes = step.notes
+        self.stepData = stepData
     }
     
     var body: some View {
@@ -49,15 +46,15 @@ struct StepSheetView: View {
             }
             
             VStack {
-                Text(stepName)
+                TextField("Nome ", text: $stepData.name)
                     .font(.largeTitle.bold())
                     .frame(maxWidth: .infinity, alignment: .leading)
                 
-                Toggle(isOn: $isDone) {
+                Toggle(isOn: $stepData.isDone) {
                     Text("Concluído")
                 }
                 
-                TextEditor(text: $notes)
+                TextEditor(text: $stepData.notes)
             }
             .padding(.top, 24)
             .padding(.horizontal, 16)
@@ -67,11 +64,15 @@ struct StepSheetView: View {
         }
         .navigationBarHidden(true)
         .background(Color.white)
+        .onDisappear {
+            self.stepData.writeData(context: viewContext)
+            self.stepData.reset()
+        }
     }
 }
 
 struct StepSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        StepSheetView(step: Step.example(context: PersistenceController.preview.container.viewContext))
+        StepSheetView(step: Step.example(context: PersistenceController.preview.container.viewContext), stepData: StepViewModel())
     }
 }

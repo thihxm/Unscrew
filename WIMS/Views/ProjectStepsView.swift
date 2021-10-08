@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ProjectStepsView: View {
+    @StateObject var stepData = StepViewModel()
+    
     let project: Project
     var projectsSteps: [Step] {
         if let steps = project.steps as? Set<Step> {
@@ -39,7 +41,7 @@ struct ProjectStepsView: View {
             ScrollView(.vertical) {
                 VStack {
                     ForEach(projectsSteps, id: \.self) { step in
-                        ProjectStepRow(step: step)
+                        ProjectStepRow(stepData: stepData, step: step)
                     }
                 }
                 .padding(.horizontal, 24)

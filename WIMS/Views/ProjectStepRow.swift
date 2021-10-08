@@ -9,6 +9,8 @@ import SwiftUI
 import CoreData
 
 struct ProjectStepRow: View {
+    @ObservedObject var stepData: StepViewModel
+    
     let step: Step
     
     @State private var presentDetails: Bool = false
@@ -16,6 +18,7 @@ struct ProjectStepRow: View {
     var body: some View {
         Button(action: {
             presentDetails.toggle()
+            stepData.editStep(step: step)
         }) {
             HStack(spacing: 16) {
                 Circle()
@@ -40,14 +43,14 @@ struct ProjectStepRow: View {
             .frame(maxHeight: 80)
         }
         .sheet(isPresented: $presentDetails) {
-            StepSheetView(step: step)
+            StepSheetView(step: step, stepData: stepData)
         }
     }
 }
 
 struct ProjectStepRow_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectStepRow(step: Step.example(context: PersistenceController.preview.container.viewContext))
+        ProjectStepRow(stepData: StepViewModel(), step: Step.example(context: PersistenceController.preview.container.viewContext))
     }
 }
 
