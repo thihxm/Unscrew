@@ -9,16 +9,26 @@ import SwiftUI
 import CoreData
 
 struct ProjectStepsView: View {
-    @StateObject var stepData = StepViewModel()
+    private enum SortDirection {
+        case asc, desc
+    }
     
-    @State var showCreateStepSheet: Bool = false
+    @StateObject private var stepData = StepViewModel()
     
     let project: Project
-    var projectsSteps: [Step] {
-        if let steps = project.steps as? Set<Step> {
-            return Array(steps)
-        }
-        return [Step]()
+    
+    @State private var projectsSteps: [Step]
+    @State private var showCreateStepSheet: Bool = false
+    @State private var sortDirection: SortDirection = .asc
+    
+    init(project: Project) {
+        self.project = project
+        self.projectsSteps = {
+            if let steps = project.steps as? Set<Step> {
+                return Array(steps).sorted(by: { $0.timestamp < $1.timestamp })
+            }
+            return [Step]()
+        }()
     }
     
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
@@ -58,7 +68,17 @@ struct ProjectStepsView: View {
     }
     
     func sortSteps() {
-        
+        print("sorting")
+        withAnimation {
+            switch sortDirection {
+            case .asc:
+                projectsSteps = projectsSteps.sorted(by: { $0.timestamp > $1.timestamp })
+                sortDirection = .desc
+            case .desc:
+                projectsSteps = projectsSteps.sorted(by: { $0.timestamp < $1.timestamp })
+                sortDirection = .asc
+            }
+        }
     }
     
     func createStep() {
