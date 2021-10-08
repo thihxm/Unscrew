@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct WIMSApp: App {
+struct UnscrewApp: App {
     let persistenceController = PersistenceController.shared
     
     @Environment(\.scenePhase) var scenePhase

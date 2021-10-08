@@ -14,11 +14,11 @@
 		AF54235E270F864D000E6C35 /* RoundedCorners.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF54235D270F864D000E6C35 /* RoundedCorners.swift */; };
 		AF542361270F8C06000E6C35 /* Step+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF542360270F8C06000E6C35 /* Step+helpers.swift */; };
 		AF542363270F8C13000E6C35 /* Project+helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF542362270F8C13000E6C35 /* Project+helpers.swift */; };
-		AF5CE0BF270D026400BE9D27 /* WIMSApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0BE270D026400BE9D27 /* WIMSApp.swift */; };
+		AF5CE0BF270D026400BE9D27 /* UnscrewApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0BE270D026400BE9D27 /* UnscrewApp.swift */; };
 		AF5CE0C3270D026600BE9D27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5CE0C2270D026600BE9D27 /* Assets.xcassets */; };
 		AF5CE0C6270D026600BE9D27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5CE0C5270D026600BE9D27 /* Preview Assets.xcassets */; };
 		AF5CE0C8270D026600BE9D27 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0C7270D026600BE9D27 /* Persistence.swift */; };
-		AF5CE0CB270D026600BE9D27 /* WIMS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0C9270D026600BE9D27 /* WIMS.xcdatamodeld */; };
+		AF5CE0CB270D026600BE9D27 /* Unscrew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0C9270D026600BE9D27 /* Unscrew.xcdatamodeld */; };
 		AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950851270E53F1007018B4 /* ProjectCard.swift */; };
 		AF950855270E56EF007018B4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950854270E56EF007018B4 /* Shadow.swift */; };
 		AF950858270E5748007018B4 /* View+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950857270E5748007018B4 /* View+Shadow.swift */; };
@@ -42,12 +42,12 @@
 		AF54235D270F864D000E6C35 /* RoundedCorners.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedCorners.swift; sourceTree = "<group>"; };
 		AF542360270F8C06000E6C35 /* Step+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Step+helpers.swift"; sourceTree = "<group>"; };
 		AF542362270F8C13000E6C35 /* Project+helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Project+helpers.swift"; sourceTree = "<group>"; };
-		AF5CE0BB270D026400BE9D27 /* WIMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WIMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AF5CE0BE270D026400BE9D27 /* WIMSApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WIMSApp.swift; sourceTree = "<group>"; };
+		AF5CE0BB270D026400BE9D27 /* Unscrew.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Unscrew.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF5CE0BE270D026400BE9D27 /* UnscrewApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnscrewApp.swift; sourceTree = "<group>"; };
 		AF5CE0C2270D026600BE9D27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF5CE0C5270D026600BE9D27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF5CE0C7270D026600BE9D27 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		AF5CE0CA270D026600BE9D27 /* WIMS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WIMS.xcdatamodel; sourceTree = "<group>"; };
+		AF5CE0CA270D026600BE9D27 /* Unscrew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Unscrew.xcdatamodel; sourceTree = "<group>"; };
 		AF950851270E53F1007018B4 /* ProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCard.swift; sourceTree = "<group>"; };
 		AF950854270E56EF007018B4 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		AF950857270E5748007018B4 /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		AF5CE0B2270D026400BE9D27 = {
 			isa = PBXGroup;
 			children = (
-				AF5CE0BD270D026400BE9D27 /* WIMS */,
+				AF5CE0BD270D026400BE9D27 /* Unscrew */,
 				AF5CE0BC270D026400BE9D27 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -94,12 +94,12 @@
 		AF5CE0BC270D026400BE9D27 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AF5CE0BB270D026400BE9D27 /* WIMS.app */,
+				AF5CE0BB270D026400BE9D27 /* Unscrew.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		AF5CE0BD270D026400BE9D27 /* WIMS */ = {
+		AF5CE0BD270D026400BE9D27 /* Unscrew */ = {
 			isa = PBXGroup;
 			children = (
 				AFAA5F032710AC6A00F3C005 /* ViewModels */,
@@ -107,13 +107,13 @@
 				AF95085F270E67FE007018B4 /* Enums */,
 				AF950856270E5724007018B4 /* Extensions */,
 				AF950850270E53D9007018B4 /* Views */,
-				AF5CE0BE270D026400BE9D27 /* WIMSApp.swift */,
+				AF5CE0BE270D026400BE9D27 /* UnscrewApp.swift */,
 				AF5CE0C2270D026600BE9D27 /* Assets.xcassets */,
 				AF5CE0C7270D026600BE9D27 /* Persistence.swift */,
-				AF5CE0C9270D026600BE9D27 /* WIMS.xcdatamodeld */,
+				AF5CE0C9270D026600BE9D27 /* Unscrew.xcdatamodeld */,
 				AF5CE0C4270D026600BE9D27 /* Preview Content */,
 			);
-			path = WIMS;
+			path = Unscrew;
 			sourceTree = "<group>";
 		};
 		AF5CE0C4270D026600BE9D27 /* Preview Content */ = {
@@ -181,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AF5CE0BA270D026400BE9D27 /* WIMS */ = {
+		AF5CE0BA270D026400BE9D27 /* Unscrew */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AF5CE0CE270D026600BE9D27 /* Build configuration list for PBXNativeTarget "WIMS" */;
+			buildConfigurationList = AF5CE0CE270D026600BE9D27 /* Build configuration list for PBXNativeTarget "Unscrew" */;
 			buildPhases = (
 				AF5CE0B7270D026400BE9D27 /* Sources */,
 				AF5CE0B8270D026400BE9D27 /* Frameworks */,
@@ -193,9 +193,9 @@
 			);
 			dependencies = (
 			);
-			name = WIMS;
-			productName = WIMS;
-			productReference = AF5CE0BB270D026400BE9D27 /* WIMS.app */;
+			name = Unscrew;
+			productName = Unscrew;
+			productReference = AF5CE0BB270D026400BE9D27 /* Unscrew.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -213,7 +213,7 @@
 					};
 				};
 			};
-			buildConfigurationList = AF5CE0B6270D026400BE9D27 /* Build configuration list for PBXProject "WIMS" */;
+			buildConfigurationList = AF5CE0B6270D026400BE9D27 /* Build configuration list for PBXProject "Unscrew" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -226,7 +226,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AF5CE0BA270D026400BE9D27 /* WIMS */,
+				AF5CE0BA270D026400BE9D27 /* Unscrew */,
 			);
 		};
 /* End PBXProject section */
@@ -259,12 +259,12 @@
 				AFAA5F022710AC6700F3C005 /* StepViewModel.swift in Sources */,
 				AF950858270E5748007018B4 /* View+Shadow.swift in Sources */,
 				AF950861270E680E007018B4 /* Status.swift in Sources */,
-				AF5CE0CB270D026600BE9D27 /* WIMS.xcdatamodeld in Sources */,
+				AF5CE0CB270D026600BE9D27 /* Unscrew.xcdatamodeld in Sources */,
 				AF54235C270F845A000E6C35 /* StepSheetView.swift in Sources */,
 				AF950855270E56EF007018B4 /* Shadow.swift in Sources */,
 				AFAA5F052710C4A800F3C005 /* ImagePicker.swift in Sources */,
 				AF95085A270E5F14007018B4 /* View+If.swift in Sources */,
-				AF5CE0BF270D026400BE9D27 /* WIMSApp.swift in Sources */,
+				AF5CE0BF270D026400BE9D27 /* UnscrewApp.swift in Sources */,
 				AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */,
 				AF54235E270F864D000E6C35 /* RoundedCorners.swift in Sources */,
 				AF950867270E8E37007018B4 /* TabBar.swift in Sources */,
@@ -396,11 +396,10 @@
 		AF5CE0CF270D026600BE9D27 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WIMS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Unscrew/Preview Content\"";
 				DEVELOPMENT_TEAM = 3GTJZ8KSTX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -417,7 +416,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.dev.thihxm.WIMS;
+				PRODUCT_BUNDLE_IDENTIFIER = br.dev.thihxm.Unscrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -428,11 +427,10 @@
 		AF5CE0D0270D026600BE9D27 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"WIMS/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Unscrew/Preview Content\"";
 				DEVELOPMENT_TEAM = 3GTJZ8KSTX;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -449,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = br.dev.thihxm.WIMS;
+				PRODUCT_BUNDLE_IDENTIFIER = br.dev.thihxm.Unscrew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -460,7 +458,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		AF5CE0B6270D026400BE9D27 /* Build configuration list for PBXProject "WIMS" */ = {
+		AF5CE0B6270D026400BE9D27 /* Build configuration list for PBXProject "Unscrew" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF5CE0CC270D026600BE9D27 /* Debug */,
@@ -469,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AF5CE0CE270D026600BE9D27 /* Build configuration list for PBXNativeTarget "WIMS" */ = {
+		AF5CE0CE270D026600BE9D27 /* Build configuration list for PBXNativeTarget "Unscrew" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AF5CE0CF270D026600BE9D27 /* Debug */,
@@ -481,13 +479,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AF5CE0C9270D026600BE9D27 /* WIMS.xcdatamodeld */ = {
+		AF5CE0C9270D026600BE9D27 /* Unscrew.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AF5CE0CA270D026600BE9D27 /* WIMS.xcdatamodel */,
+				AF5CE0CA270D026600BE9D27 /* Unscrew.xcdatamodel */,
 			);
-			currentVersion = AF5CE0CA270D026600BE9D27 /* WIMS.xcdatamodel */;
-			path = WIMS.xcdatamodeld;
+			currentVersion = AF5CE0CA270D026600BE9D27 /* Unscrew.xcdatamodel */;
+			path = Unscrew.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
