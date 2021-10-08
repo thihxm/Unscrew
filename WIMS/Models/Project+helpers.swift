@@ -43,7 +43,11 @@ extension Project {
     }
     
     static func example(context: NSManagedObjectContext) -> Project {
-        return Project(name: "Projeto teste", context: context)
+        let project = Project(name: "Projeto teste", context: context)
+        project.addToSteps(Step.example(context: context))
+        project.addToSteps(Step.example(context: context))
+        project.addToSteps(Step.example(context: context))
+        return project
     }
 }
 

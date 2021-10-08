@@ -10,12 +10,12 @@ import CoreData
 import UIKit
 
 extension Step {
-    convenience init(name: String, image: Data?, description: String, context: NSManagedObjectContext) {
+    convenience init(name: String, image: Data?, notes: String, context: NSManagedObjectContext) {
         self.init(context: context)
         self.name_ = name
         self.isDone = false
         self.image_ = image
-        self.description_ = description
+        self.notes_ = notes
     }
     
     var name: String {
@@ -36,10 +36,19 @@ extension Step {
         }
     }
     
+    var notes: String {
+        get {
+            return notes_ ?? ""
+        }
+        set {
+            notes_ = newValue
+        }
+    }
+    
     public override func awakeFromInsert() {
         setPrimitiveValue("", forKey: StepProperties.name)
         setPrimitiveValue(false, forKey: StepProperties.isDone)
-        setPrimitiveValue("", forKey: StepProperties.description)
+        setPrimitiveValue("", forKey: StepProperties.notes)
     }
     
     static func delete(at offset: IndexPath, for steps: [Step]) {
@@ -56,7 +65,7 @@ extension Step {
     }
     
     static func example(context: NSManagedObjectContext) -> Step {
-        return Step(name: "Primero passo", image: UIImage(systemName: "photo.fill")!.jpegData(compressionQuality: 1), description: "Super obsevações que devem ser lembradas na hora de aplicar este passo", context: context)
+        return Step(name: "Primero passo", image: UIImage(systemName: "photo.fill")!.jpegData(compressionQuality: 1), notes: "Super obsevações que devem ser lembradas na hora de aplicar este passo", context: context)
     }
 }
 
@@ -64,5 +73,5 @@ struct StepProperties {
     static let name = "name_"
     static let isDone = "isDone"
     static let image = "image_"
-    static let description = "description_"
+    static let notes = "notes_"
 }

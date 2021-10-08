@@ -6,28 +6,30 @@
 //
 
 import SwiftUI
+import CoreData
 
 struct ProjectCard: View {
-    var projectTitle: String
-    var isDone: Bool
+    var project: Project
     
     var body: some View {
         VStack(spacing: 4) {
             // MARK: TODO change to project image
             RoundedRectangle(cornerRadius: 4)
                 .fill(Color(UIColor.systemGray3))
+                .frame(height: 96)
             
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Nome do aparelho em até 2 linhas")
+            VStack(alignment: .leading) {
+                Text(project.name)
+                Spacer()
                 HStack {
                     Circle()
-                        .fill(isDone ? .black : .white)
+                        .fill(project.isDone ? .black : .white)
                         .frame(width: 8, height: 8)
-                        .if(!isDone) {
+                        .if(!project.isDone) {
                             $0.wimsInnerShadow()
                         }
 
-                    if isDone {
+                    if project.isDone {
                         Text("Pronto")
                     } else {
                         Text("Aberto")
@@ -36,7 +38,7 @@ struct ProjectCard: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
         }
-        .frame(maxWidth: 160, idealHeight: 172, maxHeight: 172)
+        .frame(maxWidth: 160, idealHeight: 172, maxHeight: 172, alignment: .top)
         .padding(8)
         .background(Color(UIColor.systemBackground))
         .cornerRadius(8)
@@ -46,7 +48,6 @@ struct ProjectCard: View {
 
 struct ProjectCard_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectCard(projectTitle: "Nome do aparelho em até 2 linhas", isDone: true)
-        ProjectCard(projectTitle: "Nome do aparelho em até 2 linhas", isDone: false)
+        ProjectCard(project: Project.example(context: PersistenceController.preview.container.viewContext))
     }
 }

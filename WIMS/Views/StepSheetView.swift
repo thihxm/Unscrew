@@ -8,11 +8,18 @@
 import SwiftUI
 
 struct StepSheetView: View {
-    var stepName: String = "Nome do passo"
+    let step: Step
     
+    @State var stepName: String
     @State var isDone: Bool = false
+    @State var notes: String
     
-    @State var observations: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas turpis nunc, dignissim eu molestie eu, convallis finibus velit. Fusce et diam diam. Etiam ligula lectus, venenatis luctus nisl tincidunt, varius pulvinar lacus. Suspendisse interdum quam sed est tincidunt, id convallis tortor pretium. In vehicula sollicitudin purus, eget scelerisque mauris viverra vel. Nullam interdum turpis tincidunt sem mattis, ut faucibus augue rutrum. Ut vulputate, sapien et aliquet mattis, odio enim mattis felis, ut volutpat mi quam ultrices magna. Maecenas viverra scelerisque ipsum, vitae feugiat odio varius at. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Integer et ipsum quis nisl rhoncus congue."
+    init(step: Step) {
+        self.step = step
+        self.stepName = step.name
+        self.isDone = step.isDone
+        self.notes = step.notes
+    }
     
     var body: some View {
         VStack(spacing: 0) {
@@ -50,7 +57,7 @@ struct StepSheetView: View {
                     Text("Concluído")
                 }
                 
-                TextEditor(text: $observations)
+                TextEditor(text: $notes)
             }
             .padding(.top, 24)
             .padding(.horizontal, 16)
@@ -58,12 +65,13 @@ struct StepSheetView: View {
             .clipShape(RoundedCorners(corners: [.topLeft, .topRight], radius: 16))
             .offset(y: -16)
         }
+        .navigationBarHidden(true)
         .background(Color.white)
     }
 }
 
 struct StepSheetView_Previews: PreviewProvider {
     static var previews: some View {
-        StepSheetView()
+        StepSheetView(step: Step.example(context: PersistenceController.preview.container.viewContext))
     }
 }
