@@ -18,7 +18,7 @@
 		AF5CE0C3270D026600BE9D27 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5CE0C2270D026600BE9D27 /* Assets.xcassets */; };
 		AF5CE0C6270D026600BE9D27 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF5CE0C5270D026600BE9D27 /* Preview Assets.xcassets */; };
 		AF5CE0C8270D026600BE9D27 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0C7270D026600BE9D27 /* Persistence.swift */; };
-		AF5CE0CB270D026600BE9D27 /* Unscrew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF5CE0C9270D026600BE9D27 /* Unscrew.xcdatamodeld */; };
+		AF649C222710E57300BC80CC /* Unscrew.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AF649C202710E57300BC80CC /* Unscrew.xcdatamodeld */; };
 		AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950851270E53F1007018B4 /* ProjectCard.swift */; };
 		AF950855270E56EF007018B4 /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950854270E56EF007018B4 /* Shadow.swift */; };
 		AF950858270E5748007018B4 /* View+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF950857270E5748007018B4 /* View+Shadow.swift */; };
@@ -47,7 +47,7 @@
 		AF5CE0C2270D026600BE9D27 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF5CE0C5270D026600BE9D27 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AF5CE0C7270D026600BE9D27 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
-		AF5CE0CA270D026600BE9D27 /* Unscrew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Unscrew.xcdatamodel; sourceTree = "<group>"; };
+		AF649C212710E57300BC80CC /* Unscrew.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Unscrew.xcdatamodel; sourceTree = "<group>"; };
 		AF950851270E53F1007018B4 /* ProjectCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCard.swift; sourceTree = "<group>"; };
 		AF950854270E56EF007018B4 /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		AF950857270E5748007018B4 /* View+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Shadow.swift"; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 				AF5CE0BE270D026400BE9D27 /* UnscrewApp.swift */,
 				AF5CE0C2270D026600BE9D27 /* Assets.xcassets */,
 				AF5CE0C7270D026600BE9D27 /* Persistence.swift */,
-				AF5CE0C9270D026600BE9D27 /* Unscrew.xcdatamodeld */,
+				AF649C202710E57300BC80CC /* Unscrew.xcdatamodeld */,
 				AF5CE0C4270D026600BE9D27 /* Preview Content */,
 			);
 			path = Unscrew;
@@ -259,7 +259,6 @@
 				AFAA5F022710AC6700F3C005 /* StepViewModel.swift in Sources */,
 				AF950858270E5748007018B4 /* View+Shadow.swift in Sources */,
 				AF950861270E680E007018B4 /* Status.swift in Sources */,
-				AF5CE0CB270D026600BE9D27 /* Unscrew.xcdatamodeld in Sources */,
 				AF54235C270F845A000E6C35 /* StepSheetView.swift in Sources */,
 				AF950855270E56EF007018B4 /* Shadow.swift in Sources */,
 				AFAA5F052710C4A800F3C005 /* ImagePicker.swift in Sources */,
@@ -268,6 +267,7 @@
 				AF950852270E53F1007018B4 /* ProjectCard.swift in Sources */,
 				AF54235E270F864D000E6C35 /* RoundedCorners.swift in Sources */,
 				AF950867270E8E37007018B4 /* TabBar.swift in Sources */,
+				AF649C222710E57300BC80CC /* Unscrew.xcdatamodeld in Sources */,
 				AFAA5F002710846800F3C005 /* ProjectNameAlert.swift in Sources */,
 				AF464E10270F7B84006B8645 /* Color+AppColors.swift in Sources */,
 				AF542361270F8C06000E6C35 /* Step+helpers.swift in Sources */,
@@ -479,12 +479,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		AF5CE0C9270D026600BE9D27 /* Unscrew.xcdatamodeld */ = {
+		AF649C202710E57300BC80CC /* Unscrew.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				AF5CE0CA270D026600BE9D27 /* Unscrew.xcdatamodel */,
+				AF649C212710E57300BC80CC /* Unscrew.xcdatamodel */,
 			);
-			currentVersion = AF5CE0CA270D026600BE9D27 /* Unscrew.xcdatamodel */;
+			currentVersion = AF649C212710E57300BC80CC /* Unscrew.xcdatamodel */;
 			path = Unscrew.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

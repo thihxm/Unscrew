@@ -20,10 +20,6 @@ struct PersistenceController {
             let newStep = Step(name: "Passo \(i)", image: UIImage(named: "Example 2"), notes: "Super obsevações que devem ser lembradas na hora de aplicar este passo", context: viewContext)
             project.addToSteps(newStep)
         }
-        for _ in 0..<10 {
-            let newItem = Item(context: viewContext)
-            newItem.timestamp = Date()
-        }
         do {
             try viewContext.save()
         } catch {
