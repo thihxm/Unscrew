@@ -17,9 +17,6 @@ struct ProjectStepsView: View {
         return [Step]()
     }
     
-    @State var selectedStep: Step = Step.example(context: PersistenceController.preview.container.viewContext)
-    @State var presentDetails: Bool = false
-    
     var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
     
     var body: some View {
@@ -42,15 +39,7 @@ struct ProjectStepsView: View {
             ScrollView(.vertical) {
                 VStack {
                     ForEach(projectsSteps, id: \.self) { step in
-                        Button(action: {
-                            self.selectedStep = step
-                            presentDetails.toggle()
-                        }) {
-                            ProjectStepRow(step: step)
-                        }
-                        .sheet(isPresented: $presentDetails) {
-                            StepSheetView(step: selectedStep)
-                        }
+                        ProjectStepRow(step: step)
                     }
                 }
                 .padding(.horizontal, 24)
