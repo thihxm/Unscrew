@@ -124,21 +124,45 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AF7DC2C62717463B00F158A2 /* ProjectStepsView */ = {
+			isa = PBXGroup;
+			children = (
+				AFAA5F042710C4A800F3C005 /* ImagePicker.swift */,
+				AF54235D270F864D000E6C35 /* RoundedCorners.swift */,
+				AF464E0D270F78AC006B8645 /* ProjectStepsView.swift */,
+				AF54235B270F845A000E6C35 /* StepSheetView.swift */,
+				AF95085B270E621B007018B4 /* ProjectStepRow.swift */,
+			);
+			path = ProjectStepsView;
+			sourceTree = "<group>";
+		};
+		AF7DC2C72717464F00F158A2 /* StatusSelector */ = {
+			isa = PBXGroup;
+			children = (
+				AF95085D270E6714007018B4 /* StatusCapsule.swift */,
+				AF950862270E7180007018B4 /* StatusSelector.swift */,
+			);
+			path = StatusSelector;
+			sourceTree = "<group>";
+		};
+		AF7DC2C82717467E00F158A2 /* HomeProjectsView */ = {
+			isa = PBXGroup;
+			children = (
+				AF7DC2C72717464F00F158A2 /* StatusSelector */,
+				AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */,
+				AF649C232710EA7800BC80CC /* ProjectList.swift */,
+				AF950851270E53F1007018B4 /* ProjectCard.swift */,
+				AF950864270E7AEF007018B4 /* SearchBar.swift */,
+				AF464E0B270F66AC006B8645 /* HomeProjectsView.swift */,
+			);
+			path = HomeProjectsView;
+			sourceTree = "<group>";
+		};
 		AF950850270E53D9007018B4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AF950851270E53F1007018B4 /* ProjectCard.swift */,
-				AF95085B270E621B007018B4 /* ProjectStepRow.swift */,
-				AF95085D270E6714007018B4 /* StatusCapsule.swift */,
-				AF950862270E7180007018B4 /* StatusSelector.swift */,
-				AF950864270E7AEF007018B4 /* SearchBar.swift */,
-				AF464E0B270F66AC006B8645 /* HomeProjectsView.swift */,
-				AF464E0D270F78AC006B8645 /* ProjectStepsView.swift */,
-				AF54235B270F845A000E6C35 /* StepSheetView.swift */,
-				AF54235D270F864D000E6C35 /* RoundedCorners.swift */,
-				AFAA5EFF2710846800F3C005 /* ProjectNameAlert.swift */,
-				AFAA5F042710C4A800F3C005 /* ImagePicker.swift */,
-				AF649C232710EA7800BC80CC /* ProjectList.swift */,
+				AF7DC2C82717467E00F158A2 /* HomeProjectsView */,
+				AF7DC2C62717463B00F158A2 /* ProjectStepsView */,
 			);
 			path = Views;
 			sourceTree = "<group>";
