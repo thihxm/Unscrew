@@ -16,7 +16,7 @@ struct UnscrewApp: App {
     var body: some Scene {
         WindowGroup {
             HomeProjectsView()
-                .environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+                .environment(\.managedObjectContext, persistenceController.container.viewContext)
                 .preferredColorScheme(.light)
         }
         .onChange(of: scenePhase) { phase in
