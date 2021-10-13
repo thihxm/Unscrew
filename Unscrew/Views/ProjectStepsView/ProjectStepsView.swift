@@ -68,7 +68,6 @@ struct ProjectStepsView: View {
             StepsList(project: project, sortDirection: sortDirection)
         }
         .padding(.top, 32)
-        .background(Color.background.edgesIgnoringSafeArea(.all))
         .navigationTitle(project.name)
         .sheet(isPresented: $showCreateStepSheet) {
             StepSheetView(stepData: stepData)

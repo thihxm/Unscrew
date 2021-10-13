@@ -47,6 +47,7 @@ struct ProjectStepRow: View {
             .cornerRadius(8)
             .wimsShadow()
         }
+        .foregroundColor(.black)
         .frame(maxHeight: 80)
     }
     
