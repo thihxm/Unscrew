@@ -48,6 +48,19 @@ extension Project {
         return request
     }
     
+    static func filteredPredicate(filter: String, selectedStatuses: Set<Status>) -> NSPredicate {
+        let namePredicate = !filter.isEmpty ?
+        NSPredicate(format: "name_ CONTAINS[cd] %@", filter) :
+        NSPredicate(format: "TRUEPREDICATE")
+        
+        let statusPredicate = (selectedStatuses.isSuperset(of: [.done, .open]) ||
+                                selectedStatuses.isEmpty) ?
+        NSPredicate(format: "TRUEPREDICATE") :
+        NSPredicate(format: "isDone == %@", NSNumber(value: selectedStatuses.contains(.done)))
+        
+        return NSCompoundPredicate(andPredicateWithSubpredicates: [namePredicate, statusPredicate])
+    }
+    
     static func example(context: NSManagedObjectContext) -> Project {
         let project = Project(name: "Projeto teste", context: context)
         project.addToSteps(Step.example(context: context))

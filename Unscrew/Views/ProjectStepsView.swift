@@ -13,28 +13,43 @@ struct ProjectStepsView: View {
         case asc, desc
     }
     
+    private struct StepsList: View {
+        @StateObject private var stepData = StepViewModel()
+        
+        let project: Project
+        
+        @FetchRequest var steps: FetchedResults<Step>
+        
+        init(project: Project, sortDirection: SortDirection) {
+            self.project = project
+            self._steps = FetchRequest(fetchRequest: Step.fetch(by: project, asc: sortDirection == .asc), animation: .default)
+        }
+        
+        var body: some View {
+            ScrollView(.vertical) {
+                VStack {
+                    ForEach(steps, id: \.self) { step in
+                        ProjectStepRow(stepData: stepData, project: project, step: step)
+                    }
+                }
+                .padding(.horizontal, 24)
+            }
+        }
+    }
+    
     @StateObject private var stepData = StepViewModel()
     
     let project: Project
     
-    @State private var projectsSteps: [Step]
+    init(project: Project) {
+        self.project = project
+    }
+    
     @State private var showCreateStepSheet: Bool = false
     @State private var sortDirection: SortDirection = .asc
     
-    init(project: Project) {
-        self.project = project
-        self.projectsSteps = {
-            if let steps = project.steps as? Set<Step> {
-                return Array(steps).sorted(by: { $0.timestamp < $1.timestamp })
-            }
-            return [Step]()
-        }()
-    }
-    
-    var columns: [GridItem] = Array(repeating: .init(.flexible()), count: 1)
-    
     var body: some View {
-        VStack(spacing: 16) {
+        return VStack(spacing: 16) {
             HStack {
                 Button(action: sortSteps) {
                     Image(systemName: "arrow.up.arrow.down")
@@ -50,14 +65,7 @@ struct ProjectStepsView: View {
             .buttonStyle(PlainButtonStyle())
             .font(.title2)
             
-            ScrollView(.vertical) {
-                VStack {
-                    ForEach(projectsSteps, id: \.self) { step in
-                        ProjectStepRow(stepData: stepData, project: project, step: step)
-                    }
-                }
-                .padding(.horizontal, 24)
-            }
+            StepsList(project: project, sortDirection: sortDirection)
         }
         .padding(.top, 32)
         .background(Color.background.edgesIgnoringSafeArea(.all))
@@ -71,10 +79,8 @@ struct ProjectStepsView: View {
         withAnimation {
             switch sortDirection {
             case .asc:
-                projectsSteps = projectsSteps.sorted(by: { $0.timestamp > $1.timestamp })
                 sortDirection = .desc
             case .desc:
-                projectsSteps = projectsSteps.sorted(by: { $0.timestamp < $1.timestamp })
                 sortDirection = .asc
             }
         }
@@ -88,6 +94,8 @@ struct ProjectStepsView: View {
 
 struct ProjectStepsView_Previews: PreviewProvider {
     static var previews: some View {
-        ProjectStepsView(project: Project.example(context: PersistenceController.preview.container.viewContext))
+        ProjectStepsView(
+            project: Project.example(context: PersistenceController.preview.container.viewContext)
+        )
     }
 }

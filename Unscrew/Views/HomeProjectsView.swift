@@ -45,7 +45,7 @@ struct HomeProjectsView: View {
                     }
                     .padding(.horizontal, 24)
                     
-                    ProjectList(filter: searchText, selectedStatuses: selectedStatuses, showProject: $showProject)
+                    ProjectList(projects: FetchRequest(sortDescriptors: [NSSortDescriptor(keyPath: \Project.name_, ascending: true)], predicate: Project.filteredPredicate(filter: searchText, selectedStatuses: selectedStatuses), animation: .default), showProject: $showProject)
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
                 .navigationTitle("Unscrew")
@@ -62,15 +62,16 @@ struct HomeProjectsView: View {
         withAnimation {
             showProjectNameAlert.toggle()
         }
+        projectName = ""
     }
     
     private func addItem() {
-        toggleAlert()
         withAnimation {
             let project = Project(name: projectName, context: viewContext)
             PersistenceController.shared.save()
             self.showProject = project.name
         }
+        toggleAlert()
     }
     
     private func search() {

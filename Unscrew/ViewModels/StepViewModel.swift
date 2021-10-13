@@ -22,12 +22,13 @@ class StepViewModel: ObservableObject {
     var subscriptions = Set<AnyCancellable>()
     
     init() {
-        $updateStep.sink { [unowned self] step in
-            self.isDone = step?.isDone ?? false
-            self.name = step?.name ?? ""
-            self.notes = step?.notes ?? ""
-            self.image = step?.uiImage ?? nil
-        }.store(in: &subscriptions)
+        $updateStep
+            .sink { [unowned self] step in
+                self.isDone = step?.isDone ?? false
+                self.name = step?.name ?? ""
+                self.notes = step?.notes ?? ""
+                self.image = step?.uiImage ?? nil
+            }.store(in: &subscriptions)
     }
     
     func writeData(context: NSManagedObjectContext) {
@@ -41,12 +42,7 @@ class StepViewModel: ObservableObject {
             updateProject.addToSteps(step)
         }
         
-        do {
-            try context.save()
-        } catch {
-            print(error.localizedDescription)
-        }
-         
+        PersistenceController.shared.save()
     }
     
     func reset() {
@@ -60,5 +56,15 @@ class StepViewModel: ObservableObject {
     
     func addStep(project: Project) {
         updateProject = project
+    }
+    
+    func removeStep(project: Project, step: Step, context: NSManagedObjectContext) {
+        print("step removed")
+        project.removeFromSteps(step)
+        Step.delete(step: step)
+        
+        reset()
+        
+        PersistenceController.shared.save()
     }
 }

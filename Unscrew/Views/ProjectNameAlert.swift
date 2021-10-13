@@ -37,7 +37,7 @@ struct ProjectNameAlert: View {
                 
                 HStack(spacing: 8) {
                     if #available(iOS 15.0, *) {
-                        TextField("Placeholder", text: $text)
+                        TextField("Projeto", text: $text)
                             .frame(height: 24)
                             .padding(.horizontal, 16)
                             .padding(.vertical, 4)

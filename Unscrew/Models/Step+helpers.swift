@@ -70,10 +70,23 @@ extension Step {
         }
     }
     
+    static func delete(step: Step) {
+        if let viewContext = step.managedObjectContext {
+            viewContext.delete(step)
+        }
+    }
+    
     static func fetch() -> NSFetchRequest<Step> {
         let request = NSFetchRequest<Step>(entityName: "Step")
         request.sortDescriptors = [NSSortDescriptor(keyPath: \Step.timestamp_, ascending: true)]
         request.predicate = NSPredicate(format: "TRUEPREDICATE")
+        return request
+    }
+    
+    static func fetch(by project: Project, asc: Bool = true) -> NSFetchRequest<Step> {
+        let request = NSFetchRequest<Step>(entityName: "Step")
+        request.sortDescriptors = [NSSortDescriptor(keyPath: \Step.timestamp_, ascending: asc)]
+        request.predicate = NSPredicate(format: "project.name_ = %@", project.name)
         return request
     }
     
